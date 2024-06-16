@@ -1,41 +1,44 @@
 package LinkedList;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @Slf4j
 class SingleLinkedListTest {
 
-
     private SingleLinkedList list;
-    private SingleLinkedList list1;
 
     @BeforeEach
-    public void setup(){
+    void setup(){
         list = new SingleLinkedList();
-        list1 = new SingleLinkedList();
+
+    }
+    @Test
+    void addFirst() {
+        list.addFirst(3);
+        list.addFirst(2);
+        list.addFirst(1);
+        list.print();
+        Assertions.assertEquals(1, list.head.data);
     }
 
     @Test
-    public void mergeTwoSingleLinkLists(){
-        SingleLinkedList list = new SingleLinkedList();
-        list = list.insertAtEndSingleLinkedList(list, 1);
-        list = list.insertAtEndSingleLinkedList(list, 3);
-        list = list.insertAtEndSingleLinkedList(list, 5);
-        list = list.insertAtEndSingleLinkedList(list, 7);
-
-        SingleLinkedList list1 = new SingleLinkedList();
-        list1 = list1.insertAtEndSingleLinkedList(list1, 1);
-        list1 = list1.insertAtEndSingleLinkedList(list1, 3);
-        list1 = list1.insertAtEndSingleLinkedList(list1, 5);
-
-
-        System.out.println(list.printSingleLinkedList(list));
-
-        System.out.println(list1.printSingleLinkedList(list1));
-
+    void addLast() {
+        list.addFirst(3);
+        list.addFirst(2);
+        list.addFirst(1);
+        list.addLast(4);
+        list.print();
+        Assertions.assertEquals(4, list.head.next.next.next.data);
     }
+
+    @Test
+    void addLastOnEmptyList() {
+        list.addLast(1);
+        list.print();
+        Assertions.assertEquals(1, list.head.data);
+    }
+
 }

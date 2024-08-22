@@ -41,4 +41,16 @@ class SingleLinkedListTest {
         Assertions.assertEquals(1, list.head.data);
     }
 
+
+    @Test
+    void loadSingleLinkedListInSameOrder() {
+        list.loadSingleLinkedListInSameOrder(new int[]{1,2,3,4});
+        list.print();
+        Assertions.assertEquals(1, list.head.data);
+    }
+
+    @Test
+    void swapPairs(){
+       list.loadSingleLinkedListInSameOrder(new int[]{1,2,3,4});
+    }
 }

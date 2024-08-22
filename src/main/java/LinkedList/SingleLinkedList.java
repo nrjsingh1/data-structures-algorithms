@@ -6,22 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class SingleLinkedList {
 
-    Node head;
+    public Node head;
 
-
-    class Node {
-        int data;
-        Node next;
-
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-
-        void print(){
-            log.info("[Data {} - Ref {}]", this.data, this.next);
-        }
-    }
 
     public void addFirst(int data) {
         Node newNode = new Node(data);
@@ -29,25 +15,31 @@ public class SingleLinkedList {
         head = newNode;
     }
 
-    public void addLast(int data){
+    public void addLast(int data) {
         Node newNode = new Node(data);
-        if(head == null){
+        if (head == null) {
             head = newNode;
             return;
         }
         Node temp = head;
-        while(temp.next!=null){
-            temp=temp.next;
+        while (temp.next != null) {
+            temp = temp.next;
         }
         temp.next = newNode;
     }
 
-    public void print(){
+    public void loadSingleLinkedListInSameOrder(int[] items) {
+        for (int i : items) {
+            this.addLast(i);
+        }
+    }
+
+    public void print() {
         Node temp = head;
         log.info("Printing List with Head {}", head.data);
-        while(temp!=null){
+        while (temp != null) {
             temp.print();
-            temp= temp.next;
+            temp = temp.next;
         }
     }
 }

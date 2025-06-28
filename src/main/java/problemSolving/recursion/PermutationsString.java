@@ -1,6 +1,8 @@
 package problemSolving.recursion;
 
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 //permutations of a string using swap
@@ -14,6 +16,14 @@ class PermutationsString {
         
         for(String temp:res)
             System.out.println(temp);
+
+        List<Character> temp = new ArrayList<>();
+        boolean[] used = new boolean[arr.length];
+
+    }
+
+    static void bT(Set<String> res, List<Character> temp,  char[] arr, boolean[] used){
+
     }
     
     static void permuteBT(Set<String> res,  char[] arr, int pos){
